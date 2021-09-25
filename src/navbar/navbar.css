@@ -1,0 +1,146 @@
+@font-face {
+	font-family: "moderanera";
+	src: url("../font/ModernEraTRIAL-Black.otf");
+}
+.container {
+	max-width: 1420px;
+	margin: auto;
+}
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 8px 5px;
+}
+.nav-link {
+	text-decoration: none;
+	margin-right: 25px;
+	color: black;
+	font-weight: 700;
+}
+.nav-right {
+	font-size: 28px;
+	font-family: "moderanera";
+}
+.lnk-capsule {
+	border: 3px solid black;
+	border-radius: 48px;
+	padding: 0 9px;
+	margin: 9px;
+	color: black;
+	font-family: "moderanera";
+	background: none;
+	font-size: 27px;
+	line-height: 100%;
+	cursor: pointer;
+}
+.title {
+	font-family: "moderanera";
+	font-size: 30px;
+	margin: auto 12px;
+}
+.div-form {
+	width: 475px;
+	margin: auto 50px;
+	display: flex;
+	flex-direction: column;
+}
+.div-form form {
+	display: flex;
+	flex-direction: column;
+}
+.div-form form button {
+	border: none;
+	background: none;
+	font-size: 20px;
+	width: 130px;
+	margin-top: 15px;
+	cursor: pointer;
+	font-family: "moderanera";
+}
+.div-form input[type="text"],
+input[type="email"] {
+	margin: 10px 0px;
+	border-radius: 50px;
+	border: 3px solid grey;
+	padding: 5px 20px;
+	font-size: 20px;
+}
+.modal-text {
+	width: 615px;
+	margin: 4rem auto;
+	font-family: "moderanera";
+}
+.modal-text p {
+	font-size: 25px;
+}
+
+.close-btn {
+	float: right;
+	border: none;
+	background: none;
+	font-size: 30px;
+	cursor: pointer;
+}
+.confirm-msg {
+	font-family: "moderanera";
+	font-size: 22px;
+	margin: 20px 0;
+	width: 505px;
+}
+
+@media only screen and (max-width: 1435px) {
+	.container {
+		max-width: 1007px;
+		/* border: 0.1px solid red; */
+	}
+}
+@media only screen and (max-width: 768px) {
+	.container {
+		max-width: 765px !important;
+	}
+	.title {
+		font-size: 22px;
+	}
+	.nav-right {
+		font-size: 22px;
+	}
+	.lnk-capsule {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-device-width: 426px) {
+	.container {
+		max-width: 320px !important;
+		margin: auto;
+	}
+	.navbar {
+		padding: 8px 5px;
+		margin: 0;
+	}
+	.bg-nav {
+		background-color: #5640fb;
+	}
+	.nav-link,
+	.lnk-capsule {
+		display: none;
+	}
+	.title {
+		margin: 15px;
+		color: #fff;
+	}
+}
+/* @media only screen and (max-device-width: 415px) {
+	.navbar {
+		background-color: #5640fb;
+	}
+	.nav-link,
+	.lnk-capsule {
+		display: none;
+	}
+	.title {
+		margin: 15px;
+		color: #fff;
+	}
+} */

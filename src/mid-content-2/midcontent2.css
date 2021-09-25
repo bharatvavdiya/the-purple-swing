@@ -1,0 +1,105 @@
+@font-face {
+	font-family: "moderanera-extrabold";
+	src: url("../font/ModernEraTRIAL-ExtraBold.otf");
+}
+@font-face {
+	font-family: "moderanera-regular";
+	src: url("../font/ModernEraTRIALRegular.otf");
+}
+.container {
+	max-width: 1420px;
+	margin: auto;
+}
+.second {
+	font-size: 65px;
+	font-weight: 300;
+	font-family: "moderanera-extrabold" !important;
+	width: 70%;
+	margin: auto;
+}
+
+.exm-img {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 80px;
+}
+.exm-para {
+	width: 950px;
+	margin: auto;
+}
+.mid p {
+	margin: 55px 0px;
+	font-size: 25px;
+	font-family: "moderanera-regular";
+}
+.exm-para p {
+	color: #707070;
+}
+
+.exm-img img {
+	width: 65rem;
+}
+
+.exm-img img:nth-child(2) {
+	width: 70rem;
+	padding-top: 15rem;
+}
+
+@media only screen and (max-width: 1435px) {
+	.container {
+		max-width: 1007px !important;
+	}
+	.exm-img img {
+		width: 55rem;
+	}
+	.second {
+		font-size: 54px;
+		width: 96%;
+		margin: auto;
+	}
+	.exm-para {
+		width: 940px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.container {
+		max-width: 765px !important;
+	}
+	.exm-img img {
+		width: 40rem;
+	}
+	.exm-para {
+		width: 700px;
+	}
+}
+@media only screen and (max-device-width: 426px) {
+	.container {
+		max-width: 320px !important;
+	}
+	.exm-img {
+		display: none;
+	}
+	.second {
+		font-size: 40px;
+		font-family: "moderanera-extrabold" !important;
+		width: 90%;
+		margin: auto;
+	}
+	.mid p {
+		margin: 55px 0px;
+		font-size: 22px;
+	}
+	.exm-para {
+		width: 95%;
+		margin: auto;
+	}
+	/* .text-div h1 {
+		font-size: 2.4rem;
+		padding-top: 25%;
+	} */
+	.title {
+		margin: 15px 0;
+	}
+}

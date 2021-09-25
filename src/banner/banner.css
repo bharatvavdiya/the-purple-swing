@@ -1,0 +1,151 @@
+@font-face {
+	font-family: "moderaneraExtra";
+	src: url("../font/ModernEraTRIAL-ExtraBold.otf");
+}
+
+.container {
+	max-width: 1420px;
+	margin: auto;
+	/* border: 0.1px solid black; */
+}
+.ban-div {
+	min-height: 741px;
+	position: relative;
+}
+.text-div {
+	width: 69.1%;
+	margin: 0 0 0 10%;
+	padding-top: 36px;
+}
+
+.text-div span {
+	color: #5640fb;
+}
+
+.text-div h1 {
+	font-size: 4.4rem;
+	font-family: "moderaneraExtra";
+}
+.show-msg {
+	/* font-size: 4.4rem; */
+	color: #fff;
+	font-family: "moderaneraExtra";
+}
+.ban-img {
+	width: 71%;
+	position: absolute;
+	left: 29%;
+	top: 36%;
+}
+.ban-btn,
+.modal-div {
+	display: none;
+}
+
+@media only screen and (max-width: 1435px) {
+	.container {
+		max-width: 1007px;
+		/* border: 0.1px solid red; */
+	}
+	.text-div {
+		width: 77.7%;
+		margin: 0 0 0 6%;
+	}
+	.text-div h1 {
+		font-size: 3rem;
+	}
+	.ban-div {
+		min-height: 630px;
+	}
+	.text-div h1 {
+		font-size: 3.5rem;
+	}
+	.ban-img {
+		width: 74%;
+		left: 25%;
+		top: 39%;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.container {
+		max-width: 765px !important;
+	}
+	.text-div h1 {
+		font-size: 2.8rem;
+	}
+	.text-div {
+		width: 81.7%;
+	}
+	.ban-div {
+		min-height: 530px;
+	}
+}
+@media only screen and (max-device-width: 426px) {
+	.container {
+		max-width: 320px !important;
+	}
+	.ban-img {
+		display: none;
+	}
+	.bg-ban {
+		background-color: #5640fb;
+	}
+	.ban-div {
+		min-height: 664px;
+		background-color: #5640fb;
+		position: relative;
+	}
+	.text-div span {
+		color: #fff;
+	}
+	.text-div {
+		color: #fff;
+		width: 90.1%;
+		margin: auto;
+	}
+	.text-div h1 {
+		font-size: 2rem;
+		padding-top: 30%;
+	}
+	.modal-div {
+		display: block;
+		width: 85%;
+		margin: auto;
+	}
+	.ban-btn {
+		display: block;
+		position: absolute;
+		bottom: 20%;
+		left: 4.8rem;
+	}
+	.lnk-capsule {
+		border: 3px solid #fff;
+		border-radius: 48px;
+		padding: 5px 20px;
+		color: #fff;
+	}
+
+	.modal-text {
+		width: 290px;
+		margin: 3rem auto;
+	}
+
+	.div-form {
+		width: 290px;
+		margin: auto;
+	}
+
+	.confirm-msg {
+		font-size: 14px;
+		width: auto;
+		margin: auto;
+	}
+	.confirm-msg {
+		font-size: 14px;
+		width: auto;
+		margin: 1.5rem auto;
+	}
+	.show-msg {
+		font-size: 2rem;
+	}
+}

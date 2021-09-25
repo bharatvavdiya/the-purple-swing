@@ -1,0 +1,34 @@
+@font-face {
+	font-family: "moderanera";
+	src: url("../font/ModernEraTRIAL-Black.otf");
+}
+.container {
+	width: 1420px;
+	margin: auto;
+}
+.footer {
+	display: flex;
+	justify-content: space-around;
+	background-color: #5640fb;
+	height: 50px;
+	align-items: center;
+	margin-top: 5rem;
+}
+.footer-div {
+	background-color: #5640fb;
+}
+.footer a {
+	text-decoration: none;
+	color: #fff;
+	font-family: "moderanera";
+}
+
+@media only screen and (max-width: 426px) {
+	.footer {
+		flex-direction: column;
+		height: 200px;
+	}
+	.container {
+		max-width: 320px !important;
+	}
+}
