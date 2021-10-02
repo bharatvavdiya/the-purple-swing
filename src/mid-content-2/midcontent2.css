@@ -6,6 +6,14 @@
 	font-family: "moderanera-regular";
 	src: url("../font/ModernEraTRIALRegular.otf");
 }
+@font-face {
+	font-family: "frutiger";
+	src: url("../font/Frutiger\ Neue\ 1450\ W04\ Regular.otf");
+}
+@font-face {
+	font-family: "motiva";
+	src: url("../font/MotivaSansLight.woff.ttf");
+}
 .container {
 	max-width: 1420px;
 	margin: auto;
@@ -13,7 +21,7 @@
 .second {
 	font-size: 65px;
 	font-weight: 300;
-	font-family: "moderanera-extrabold" !important;
+	font-family: "frutiger";
 	width: 70%;
 	margin: auto;
 }
@@ -32,7 +40,7 @@
 .mid p {
 	margin: 55px 0px;
 	font-size: 25px;
-	font-family: "moderanera-regular";
+	font-family: "motiva";
 }
 .exm-para p {
 	color: #707070;
@@ -83,7 +91,6 @@
 	}
 	.second {
 		font-size: 40px;
-		font-family: "moderanera-extrabold" !important;
 		width: 90%;
 		margin: auto;
 	}
@@ -95,10 +102,6 @@
 		width: 95%;
 		margin: auto;
 	}
-	/* .text-div h1 {
-		font-size: 2.4rem;
-		padding-top: 25%;
-	} */
 	.title {
 		margin: 15px 0;
 	}

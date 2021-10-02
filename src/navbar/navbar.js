@@ -3,6 +3,7 @@ import "./navbar.css";
 import { NavLink } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import ReactModal from "react-modal";
+import validator from "validator";
 import { useState } from "react";
 ReactModal.setAppElement("#root");
 const customStyles = {
@@ -20,16 +21,12 @@ const customStyles = {
 };
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
-	const [showInfo, setShowInfo] = useState(false);
-	const [showButton, setShowButton] = useState(true);
+	const [isErrEmail, setIsErrEmail] = useState();
+	const [isErrCity, setIsErrCity] = useState();
+	const [isToggle, setIsToggle] = useState(false);
 	const [city, setCity] = useState("");
 	const [email, setEmail] = useState("");
 	const [people, setPeople] = useState([]);
-
-	const handleMsg = () => {
-		setShowInfo(true);
-		setShowButton(false);
-	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -38,12 +35,37 @@ export default function Navbar() {
 			setPeople((people) => {
 				return [...people, person];
 			});
-			setCity("");
-			setEmail("");
-		} else {
-			console.log("empty value");
+			setIsToggle(true);
+			// console.log(people);
+			// setCity("");
+			// setEmail("");
 		}
 	};
+
+	const handleEmail = (e) => {
+		const emailValue = e.target.value;
+
+		if (validator.normalizeEmail(emailValue)) {
+			setIsErrEmail();
+			setEmail(emailValue);
+			console.log(emailValue);
+		} else {
+			setIsErrEmail("invalid");
+		}
+	};
+
+	const handleCity = (e) => {
+		const cityValue = e.target.value;
+
+		if (validator.isAlpha(cityValue)) {
+			setIsErrCity();
+			setCity(cityValue);
+			console.log(cityValue);
+		} else {
+			setIsErrCity("invalid");
+		}
+	};
+
 	return (
 		<div className="bg-nav">
 			<div className="container">
@@ -77,37 +99,46 @@ export default function Navbar() {
 									id="email"
 									name="email"
 									value={email}
-									onChange={(e) => setEmail(e.target.value)}
+									// onChange={(e) => setEmail(e.target.value)}
+									onChange={handleEmail}
 									placeholder="Email"
-									required
 								/>
+								{isErrEmail && (
+									<small style={{ color: "#FF0000", "margin-left": "3%" }}>
+										Enter valid email
+									</small>
+								)}
 								<input
 									type="text"
 									id="email"
 									name="email"
 									value={city}
-									onChange={(e) => setCity(e.target.value)}
+									// onChange={(e) => setCity(e.target.value)}
+									onChange={handleCity}
 									placeholder="City"
-									required
 								/>
-								{showButton && (
-									<button
-										type="submit"
-										disabled={!email || !city ? "disabled" : ""}
-										onClick={handleMsg}
-									>
-										Join Waitlist
-									</button>
+								{isErrCity && (
+									<small style={{ color: "#ff0000", "margin-left": "3%" }}>
+										Enter valid city name
+									</small>
 								)}
+								<button
+									type="submit"
+									className={isToggle ? "dis-non" : "dis-block"}
+									disabled={!email || !city ? "disabled" : ""}
+									// onClick={handleMsg}
+								>
+									Join Waitlist
+								</button>
 							</form>
 
-							{showInfo && (
-								<div className="confirm-msg">
-									<span>Awesome,you're on list!🥳</span>
-									<br />
-									<a href="/">And here's a link if you want to reffer your </a>
-								</div>
-							)}
+							<div className={isToggle ? "confirm-msg" : "confirm-msg dis-non"}>
+								<span>Awesome,you're on list!🥳</span>
+								<br />
+								<a href="/">
+									And here's a link if you want to reffer a friend{" "}
+								</a>
+							</div>
 						</div>
 					</ReactModal>
 				</nav>

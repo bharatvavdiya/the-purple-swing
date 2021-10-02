@@ -1,48 +1,70 @@
 import React from "react";
 import banimg from "../img/banner-img.png";
 import "./banner.css";
-// import ReactModal from "react-modal";
+import ReactModal from "react-modal";
 import { useState } from "react";
-// import { FaTimes } from "react-icons/fa";
-// ReactModal.setAppElement("#root");
-// const customStyles = {
-// 	content: {
-// 		top: "50%",
-// 		left: "50%",
-// 		right: "auto",
-// 		bottom: "auto",
-// 		width: "350px",
-// 		height: "550px",
-// 		marginRight: "-50%",
-// 		transform: "translate(-50%,-50%)",
-// 	},
-// };
+import validator from "validator";
+import { FaTimes } from "react-icons/fa";
+ReactModal.setAppElement("#root");
+const customStyles = {
+	content: {
+		top: "50%",
+		left: "50%",
+		right: "auto",
+		bottom: "auto",
+		width: "350px",
+		height: "550px",
+		marginRight: "-50%",
+		transform: "translate(-50%,-50%)",
+	},
+};
 export default function Banner() {
-	// const [isOpen, setIsOpen] = useState(false);
-	const [showInfo, setShowInfo] = useState(false);
+	const [isOpen, setIsOpen] = useState(false);
 	const [showButton, setShowButton] = useState(true);
-	// const [city, setCity] = useState("");
-	// const [email, setEmail] = useState("");
-	// const [people, setPeople] = useState([]);
+	const [isErrEmail, setIsErrEmail] = useState();
+	const [isErrCity, setIsErrCity] = useState();
+	const [isToggle, setIsToggle] = useState(false);
+	const [city, setCity] = useState("");
+	const [email, setEmail] = useState("");
+	const [people, setPeople] = useState([]);
 
-	const handleMsg = () => {
-		setShowInfo(true);
-		setShowButton(false);
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (email && city) {
+			const person = { email, city };
+			setPeople((people) => {
+				return [...people, person];
+			});
+			setIsToggle(true);
+			// console.log(people);
+			// setCity("");
+			// setEmail("");
+		}
+	};
+	const handleEmail = (e) => {
+		const emailValue = e.target.value;
+
+		if (validator.normalizeEmail(emailValue)) {
+			setIsErrEmail();
+			setEmail(emailValue);
+			console.log(emailValue);
+		} else {
+			setIsErrEmail("invalid");
+		}
 	};
 
-	// const handleSubmit = (e) => {
-	// 	e.preventDefault();
-	// 	if (email && city) {
-	// 		const person = { email, city };
-	// 		setPeople((people) => {
-	// 			return [...people, person];
-	// 		});
-	// 		setCity("");
-	// 		setEmail("");
-	// 	} else {
-	// 		console.log("empty value");
-	// 	}
-	// };
+	const handleCity = (e) => {
+		const cityValue = e.target.value;
+
+		if (validator.isAlpha(cityValue)) {
+			setIsErrCity();
+			setCity(cityValue);
+			console.log(cityValue);
+		} else {
+			setIsErrCity("invalid");
+		}
+	};
+
 	return (
 		<div className="bg-ban">
 			<div className="container ban-div">
@@ -58,21 +80,16 @@ export default function Banner() {
 				<img class="ban-img" src={banimg} alt="banner-img" />
 				<div className="modal-div">
 					{showButton && (
-						<button className="lnk-capsule ban-btn" onClick={handleMsg}>
+						<button
+							className="lnk-capsule ban-btn"
+							onClick={() => setIsOpen(true)}
+						>
 							Join Waitlist
 						</button>
 					)}
-					{showInfo && (
-						<h1 className="show-msg">
-							Hey there! We don’t have a mobile version of our platform yet, so
-							for now you’ll have to use your desktop. You can access it using
-							the same address you’re at now thepurpleswing.com . See you over
-							there!
-						</h1>
-					)}
 				</div>
 
-				{/* <ReactModal style={customStyles} isOpen={isOpen}>
+				<ReactModal style={customStyles} isOpen={isOpen}>
 					<button className="close-btn " onClick={() => setIsOpen(false)}>
 						<FaTimes></FaTimes>
 					</button>
@@ -89,35 +106,48 @@ export default function Banner() {
 								id="email"
 								name="email"
 								value={email}
-								onChange={(e) => setEmail(e.target.value)}
+								onChange={handleEmail}
 								placeholder="Email"
+								// pattern=".+@globex\.com"
+								size="30"
 								required
 							/>
+							{isErrEmail && (
+								<small style={{ color: "#FF0000", "margin-left": "3%" }}>
+									Enter valid email
+								</small>
+							)}
 							<input
 								type="text"
 								id="email"
 								name="email"
 								value={city}
-								onChange={(e) => setCity(e.target.value)}
+								onChange={handleCity}
 								placeholder="City"
+								// pattern="^[a-zA-Z]$"
 								required
 							/>
-							{showButton && (
-								<button type="submit" onClick={handleMsg}>
-									Join Waitlist
-								</button>
+							{isErrCity && (
+								<small style={{ color: "#ff0000", "margin-left": "3%" }}>
+									Enter valid city name
+								</small>
 							)}
+							<button
+								type="submit"
+								className={isToggle ? "dis-non" : "dis-block"}
+								disabled={!email || !city ? "disabled" : ""}
+							>
+								Join Waitlist
+							</button>
 						</form>
 
-						{showInfo && (
-							<div className="confirm-msg">
-								<span>Awesome,you're on list!🥳</span>
-								<br />
-								<a href="/">And here's a link if you want to reffer your </a>
-							</div>
-						)}
+						<div className={isToggle ? "confirm-msg" : "confirm-msg dis-non"}>
+							<span>Awesome,you're on list!🥳</span>
+							<br />
+							<a href="/">And here's a link if you want to reffer a friend. </a>
+						</div>
 					</div>
-				</ReactModal> */}
+				</ReactModal>
 			</div>
 		</div>
 	);

@@ -58,6 +58,12 @@
 	cursor: pointer;
 	font-family: "moderanera";
 }
+.dis-block {
+	display: block;
+}
+.dis-non {
+	display: none;
+}
 .div-form input[type="text"],
 input[type="email"] {
 	margin: 10px 0px;

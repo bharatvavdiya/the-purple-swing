@@ -2,6 +2,10 @@
 	font-family: "moderaneraExtra";
 	src: url("../font/ModernEraTRIAL-ExtraBold.otf");
 }
+@font-face {
+	font-family: "myriadpro";
+	src: url("../font/Myriad\ Pro\ Black.otf");
+}
 
 .container {
 	max-width: 1420px;
@@ -13,8 +17,8 @@
 	position: relative;
 }
 .text-div {
-	width: 69.1%;
-	margin: 0 0 0 10%;
+	width: 66.9%;
+	margin: 0 0 0 9%;
 	padding-top: 36px;
 }
 
@@ -24,7 +28,7 @@
 
 .text-div h1 {
 	font-size: 4.4rem;
-	font-family: "moderaneraExtra";
+	font-family: "myriadpro";
 }
 .show-msg {
 	/* font-size: 4.4rem; */
@@ -32,9 +36,9 @@
 	font-family: "moderaneraExtra";
 }
 .ban-img {
-	width: 71%;
+	width: 70%;
 	position: absolute;
-	left: 29%;
+	left: 26%;
 	top: 36%;
 }
 .ban-btn,
@@ -48,7 +52,7 @@
 		/* border: 0.1px solid red; */
 	}
 	.text-div {
-		width: 77.7%;
+		width: 74.7%;
 		margin: 0 0 0 6%;
 	}
 	.text-div h1 {
@@ -61,7 +65,7 @@
 		font-size: 3.5rem;
 	}
 	.ban-img {
-		width: 74%;
+		width: 72%;
 		left: 25%;
 		top: 39%;
 	}
@@ -74,10 +78,15 @@
 		font-size: 2.8rem;
 	}
 	.text-div {
-		width: 81.7%;
+		width: 78.7%;
+	}
+	.ban-img {
+		width: 69%;
+		left: 29%;
+		top: 40%;
 	}
 	.ban-div {
-		min-height: 530px;
+		min-height: 450px;
 	}
 }
 @media only screen and (max-device-width: 426px) {
