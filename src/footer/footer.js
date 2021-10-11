@@ -18,6 +18,14 @@ export default function Footer() {
 						{" "}
 						Terms of Use{" "}
 					</NavLink>
+					<NavLink to="/profile" exact>
+						{" "}
+						Proflile{" "}
+					</NavLink>
+					<NavLink to="/feed" exact>
+						{" "}
+						Feed{" "}
+					</NavLink>
 				</div>
 			</div>
 		</div>

@@ -2,6 +2,10 @@
 	font-family: "moderanera";
 	src: url("../font/ModernEraTRIAL-Black.otf");
 }
+@font-face {
+	font-family: "myriadpro";
+	src: url("../font/Myriad\ Pro\ Black.otf");
+}
 .container {
 	max-width: 1420px;
 	margin: auto;
@@ -95,6 +99,51 @@ input[type="email"] {
 	width: 505px;
 }
 
+.sign-div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	/* border: 1px solid black; */
+	width: 905px;
+	height: 400px;
+	margin: 7% auto auto auto;
+}
+
+.sign-div * {
+	/* border: 1px solid red; */
+}
+
+.btn-back,
+.btn-next {
+	background: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	font-size: 15px;
+	display: flex;
+	flex-direction: row;
+}
+
+.btn-text {
+	font-size: 15px;
+	margin-top: 7px;
+	font-family: "myriadpro";
+}
+.btn-icon {
+	font-size: 35px;
+}
+.frm-select {
+	margin: 10px 0px;
+	border-radius: 50px;
+	border: 3px solid #d6d6d6;
+	padding: 3px 10px;
+	font-size: 16px;
+}
+
+.drp-txt {
+	font-size: 18px;
+}
 @media only screen and (max-width: 1435px) {
 	.container {
 		max-width: 1007px;

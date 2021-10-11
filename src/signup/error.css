@@ -1,0 +1,33 @@
+.error-div {
+	width: 555px;
+	margin: 25px auto auto auto;
+	/* border: 1px solid red; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 74vh;
+}
+
+.error-div span {
+	font-family: "myriadpro" !important;
+	font-size: 75px;
+	margin: 35px 0px;
+}
+
+.error-div a {
+	border: 3px solid black;
+	border-radius: 48px;
+	padding: 2px 20px;
+	margin: 35px;
+	color: black;
+	font-family: "moderanera";
+	background: none;
+	font-size: 27px;
+	line-height: 100%;
+	cursor: pointer;
+}
+
+.error-div a:hover {
+	color: #111;
+}
